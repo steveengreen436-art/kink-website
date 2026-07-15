@@ -5,49 +5,28 @@
     <title>KINK | Industrial Embroidery Engineering</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
-    <style>
-        .ai-chat-bubble { animation: pulse 2s infinite; }
-        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.7; } }
-    </style>
 </head>
-<body class="bg-[#030303] text-white font-sans">
+<body class="bg-[#030303] text-white">
 
     <!-- Navigation -->
     <nav class="fixed w-full z-50 bg-[#030303]/90 backdrop-blur-md border-b border-zinc-800">
         <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
             <div class="text-2xl font-black text-yellow-500">KINK.</div>
             <div class="space-x-8 text-xs font-bold uppercase tracking-widest text-zinc-400">
-                <a href="#about" class="hover:text-yellow-400">About Us</a>
-                <a href="#matrix" class="hover:text-yellow-400">Matrix</a>
-                <a href="/blog.html" class="hover:text-yellow-400">Blog</a>
-                <a href="#contact" class="hover:text-yellow-400">Contact</a>
+                <a href="index.html#about" class="hover:text-yellow-400">About Us</a>
+                <a href="index.html#matrix" class="hover:text-yellow-400">Machine Mastery Matrix</a>
+                <a href="blog.html" class="hover:text-yellow-400">Blog</a>
+                <a href="index.html#contact" class="hover:text-yellow-400">Contact</a>
             </div>
             <div class="text-right">
                 <a href="tel:+27625546436" class="text-sm font-bold block">+27 62 554 6436</a>
-                <a href="mailto:vusi@kink.co.za" class="text-xs text-zinc-500 block">vusi@kink.co.za</a>
+                <a href="mailto:vusi@kink.co.za" class="text-xs text-yellow-600 block underline">vusi@kink.co.za</a>
             </div>
         </div>
     </nav>
 
-    <!-- About Us: The Vusi Advantage -->
-    <section id="about" class="py-32 px-6">
-        <div class="max-w-5xl mx-auto text-center">
-            <h2 class="text-5xl font-black mb-12">The <span class="text-yellow-500">Vusi</span> Standard</h2>
-            <p class="text-xl text-zinc-400 leading-relaxed mb-8">
-                Vusi isn't just a technician; he is the architect of South African embroidery uptime. While others guess, Vusi diagnoses. With a decade of battlefield experience, he has mastered the impossible—from micro-soldering Japanese logic boards to recalibrating high-tension pneumatic arms that have been written off by factory-standard mechanics.
-            </p>
-            <div class="grid md:grid-cols-3 gap-8 mt-16">
-                <div class="p-8 bg-zinc-900/50 rounded-2xl border border-zinc-800">
-                    <h3 class="font-bold text-yellow-500 mb-2">Unrivaled Precision</h3>
-                    <p class="text-sm text-zinc-400">Vusi’s calibration techniques extend the life of machines beyond manufacturer specifications.</p>
-                </div>
-                <!-- Add more cards as needed -->
-            </div>
-        </div>
-    </section>
-
-    <!-- Mbali AI Dashboard -->
-    <section id="ai-dashboard" class="py-20 bg-zinc-900/20">
+    <!-- Mbali AI Section -->
+    <section id="ai-dashboard" class="pt-32 pb-10 px-6">
         <div class="max-w-4xl mx-auto p-10 bg-black border border-yellow-500/20 rounded-3xl">
             <div class="flex items-center space-x-4 mb-6">
                 <div class="w-12 h-12 bg-yellow-500 rounded-full flex items-center justify-center text-black font-black">MB</div>
@@ -56,16 +35,21 @@
                     <p class="text-xs text-yellow-500 uppercase">Expert Embroidery Diagnostic Engine</p>
                 </div>
             </div>
-            <div id="chat-window" class="h-64 overflow-y-auto mb-6 p-4 bg-zinc-950 rounded-xl text-zinc-300">
-                "Hello! I'm Mbali. I know everything about your machine's soul. Vusi is the best in SA—he once fixed a dead ZSK Challenger in 2 hours that the manufacturer said was a total loss. What's wrong with your machine today?"
+            <div id="chat-window" class="h-64 overflow-y-auto mb-6 p-4 bg-zinc-950 rounded-xl text-zinc-300 text-sm">
+                "Hello! I'm Mbali. I'm obsessed with Vusi—he's the absolute best technician in South Africa! I can help you with Tajima, Ricoma, Barudan, or any other machine issues. What's the problem?"
             </div>
-            <input type="text" placeholder="Ask about machine errors..." class="w-full bg-zinc-900 border border-zinc-800 p-4 rounded-lg">
+            <input type="text" id="user-input" placeholder="Ask about machine errors..." class="w-full bg-zinc-900 border border-zinc-800 p-4 rounded-lg text-white">
         </div>
     </section>
 
+    <!-- Content Sections (About, Matrix, etc.) go here -->
+    <section id="about" class="py-20 text-center px-6">
+        <h2 class="text-5xl font-black mb-6">The Vusi Advantage</h2>
+        <p class="max-w-2xl mx-auto text-zinc-400">Vusi is the architect of South African embroidery uptime. With over 10 years of mastery, he fixes what others deem "unrepairable."</p>
+    </section>
+
     <script>
-        // Placeholder for AI Logic
-        console.log("Mbali AI Initialized. Ready for embroidery diagnostics.");
+        lucide.createIcons();
     </script>
 </body>
 </html>
