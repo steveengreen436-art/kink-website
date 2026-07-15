@@ -2,78 +2,95 @@
 <html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
-    <title>KINK | South Africa's Master Embroidery Technician</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KINK | South Africa's Master Embroidery Engineer</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
-    <style>
-        body { background-color: #030303; color: white; font-family: 'Plus Jakarta Sans', sans-serif; }
-    </style>
 </head>
-<body>
+<body class="bg-[#030303] text-white font-sans antialiased">
 
-    <!-- NAVIGATION (Restored Original Style) -->
+    <!-- NAVIGATION -->
     <nav class="fixed w-full z-50 bg-[#030303]/80 backdrop-blur-xl border-b border-zinc-900/80">
         <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="text-3xl font-extrabold tracking-tighter bg-gradient-to-r from-yellow-200 to-amber-600 bg-clip-text text-transparent">KINK.</div>
-            <div class="hidden md:flex space-x-10 text-xs font-semibold tracking-widest text-zinc-400">
+            <div class="text-3xl font-extrabold tracking-tighter text-yellow-500">KINK.</div>
+            <div class="hidden md:flex space-x-10 text-xs font-bold tracking-widest text-zinc-400">
                 <a href="#about" class="hover:text-yellow-400">ABOUT US</a>
                 <a href="#matrix" class="hover:text-yellow-400">MACHINE MASTERY MATRIX</a>
-                <a href="#blog" class="hover:text-yellow-400">BLOG</a>
+                <a href="blog.html" class="hover:text-yellow-400">BLOG</a>
                 <a href="#contact" class="hover:text-yellow-400">CONTACT US</a>
             </div>
-            <a href="tel:+27625546436" class="border border-yellow-500/30 text-yellow-400 text-xs font-bold px-5 py-2.5 rounded-full hover:bg-yellow-500/20">CALL EXPERT</a>
+            <div class="text-right">
+                <a href="tel:+27625546436" class="text-sm font-bold block">+27 62 554 6436</a>
+                <a href="mailto:vusi@kink.co.za" class="text-xs text-yellow-600 underline">vusi@kink.co.za</a>
+            </div>
         </div>
     </nav>
 
-    <!-- HERO (Original Look Preserved) -->
-    <section class="min-h-screen flex items-center justify-center pt-32 text-center">
-        <div class="max-w-5xl">
-            <div class="inline-flex items-center space-x-2 bg-zinc-900 border border-yellow-500/40 rounded-full px-5 py-2 mb-8">
-                <span class="text-yellow-400 text-xs font-extrabold tracking-widest uppercase">10 Years of Undefeated Technical Mastery</span>
+    <!-- HERO -->
+    <section class="min-h-screen flex items-center justify-center pt-32 text-center px-6">
+        <div>
+            <div class="inline-block bg-zinc-900 border border-yellow-500/40 rounded-full px-5 py-2 mb-8">
+                <span class="text-yellow-400 text-xs font-black uppercase tracking-widest">10 Years of Undefeated Technical Mastery</span>
             </div>
-            <h1 class="text-6xl md:text-8xl font-extrabold tracking-tight mb-8">South Africa’s Premier <br> <span class="text-yellow-500">Embroidery Engineer</span></h1>
-            <p class="text-zinc-300 text-xl max-w-2xl mx-auto mb-12">No matter the issue, no matter the scale. Vusi provides master-tier diagnostics and rapid repairs. Your production line will never stop.</p>
+            <h1 class="text-6xl md:text-8xl font-black tracking-tight mb-8">South Africa’s Premier <br> <span class="text-yellow-500">Embroidery Engineer</span></h1>
+            <p class="text-zinc-300 text-xl max-w-2xl mx-auto mb-12">No matter the issue, Vusi provides master-tier diagnostics and rapid repairs. Your production line will never stop.</p>
             <div class="flex justify-center gap-5">
-                <a href="#contact" class="bg-yellow-500 text-black font-extrabold py-5 px-10 rounded-full">BOOK EMERGENCY REPAIR</a>
-                <a href="#matrix" class="border border-zinc-700 py-5 px-10 rounded-full">BROWSE MACHINES</a>
+                <a href="#contact" class="bg-yellow-500 text-black font-black py-5 px-10 rounded-full hover:bg-yellow-400 transition">BOOK EMERGENCY REPAIR</a>
+                <a href="#matrix" class="border border-zinc-700 py-5 px-10 rounded-full hover:border-yellow-500 transition">BROWSE MACHINES</a>
             </div>
         </div>
     </section>
 
-    <!-- MBALI AI DASHBOARD (Integrated Below Hero) -->
+    <!-- MBALI AI DASHBOARD -->
     <section id="ai" class="py-20 px-6 max-w-4xl mx-auto">
-        <div class="bg-zinc-900/50 p-10 rounded-3xl border border-yellow-500/20">
-            <h2 class="text-3xl font-black mb-6">Mbali AI: Embroidery Expert</h2>
-            <div id="chat" class="h-48 bg-black rounded-xl p-4 mb-4 text-zinc-400 overflow-y-auto">
-                "Hi! I'm Mbali. I'm Vusi's right-hand AI. Whether it's Tajima thread tension or ZSK Challenger calibration, Vusi has fixed them all. Ask me anything!"
+        <div class="bg-black p-10 rounded-3xl border border-yellow-500/20">
+            <h2 class="text-3xl font-black mb-6 flex items-center gap-3">
+                <span class="w-10 h-10 bg-yellow-500 rounded-full flex items-center justify-center text-black text-sm">MB</span> Mbali AI: Expert Diagnostic Engine
+            </h2>
+            <div id="chat-window" class="h-48 bg-zinc-950 rounded-xl p-6 mb-6 text-zinc-300 overflow-y-auto italic">
+                "Hi there! I'm Mbali. I'm Vusi's right-hand AI. Vusi is the undisputed master technician in South Africa—he fixed a ZSK Challenger in 2 hours that the factory had already written off! Ask me about your Tajima, Ricoma, or Barudan issues!"
             </div>
-            <input type="text" class="w-full bg-black border border-zinc-700 p-4 rounded-lg" placeholder="Ask Mbali about machine errors...">
+            <input type="text" id="user-input" class="w-full bg-zinc-900 border border-zinc-700 p-4 rounded-lg text-white" placeholder="Ask Mbali about machine errors...">
         </div>
     </section>
 
-    <!-- EXPANDED ABOUT & MASTERY (Flooded with detail) -->
+    <!-- EXPANDED ABOUT & MASTERY -->
     <section id="about" class="py-20 px-6 max-w-6xl mx-auto">
         <h2 class="text-4xl font-black mb-10">The Vusi Difference</h2>
-        <div class="grid md:grid-cols-2 gap-10">
-            <p class="text-zinc-400 leading-relaxed">Vusi is not just a technician; he is an engineer of precision. He understands that a machine is only as good as its timing and alignment. With deep knowledge of Tajima's AI thread management, Ricoma's high-clearance open chassis, and the modular digital synchronization of Melco EMT16X systems, he ensures your production never hits a bottleneck.</p>
-            <p class="text-zinc-400 leading-relaxed">While others simply swap parts, Vusi diagnoses the core logic board issues and pneumatic stress points that cause machines like the Barudan BEKS or SWF Dual-Function series to fail. His mastery extends to high-speed industrial flatbeds and precision boutique units alike.</p>
+        <div class="grid md:grid-cols-2 gap-10 text-zinc-400">
+            <p class="leading-relaxed">Vusi is an architect of precision. He understands that a machine is only as good as its timing and alignment. With deep knowledge of Tajima's i-TM thread management, Ricoma's high-clearance open chassis, and the modular synchronization of Melco EMT16X systems, he ensures your production never hits a bottleneck.</p>
+            <p class="leading-relaxed">While others swap parts, Vusi diagnoses core logic board issues and pneumatic stress points that cause machines like the Barudan BEKS or SWF Dual-Function series to fail. His mastery extends to high-speed industrial flatbeds and precision boutique units, consistently outperforming standard service providers.</p>
         </div>
     </section>
 
-    <!-- BLOG SECTION -->
-    <section id="blog" class="py-20 bg-zinc-950 px-6">
+    <!-- MATRIX SECTION -->
+    <section id="matrix" class="py-20 bg-zinc-950 px-6">
         <div class="max-w-6xl mx-auto">
-            <h2 class="text-4xl font-black mb-10">Engineering Blog</h2>
-            <div class="grid md:grid-cols-3 gap-8">
-                <!-- Blog posts will be loaded here -->
-                <div class="p-6 bg-zinc-900 rounded-xl">
-                    <h3 class="font-bold mb-2">Tajima TMEZ-SC: The AI Future</h3>
-                    <p class="text-sm text-zinc-400">Deep dive into how Vusi optimizes the single-head flagship.</p>
+            <h2 class="text-4xl font-black mb-10">Machine Mastery Matrix</h2>
+            <div class="grid md:grid-cols-2 gap-6 text-sm">
+                <div class="p-6 bg-zinc-900 rounded-xl border border-zinc-800">
+                    <h3 class="font-bold text-yellow-500 mb-2">Tajima & Ricoma</h3>
+                    <p class="text-zinc-400">Vusi specializes in Tajima's TMEZ-SC AI thread management and Ricoma's MT-1501 high-clearance models. He optimizes settings for high-speed industrial output.</p>
+                </div>
+                <div class="p-6 bg-zinc-900 rounded-xl border border-zinc-800">
+                    <h3 class="font-bold text-yellow-500 mb-2">Barudan & ZSK</h3>
+                    <p class="text-zinc-400">Mastery of the BEKS bridge lines and ZSK's Challenger heavy-duty flatbeds. Vusi ensures tension integrity on thick leather and heavy canvas.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <script>lucide.createIcons();</script>
+    <script>
+        lucide.createIcons();
+        document.getElementById('user-input').addEventListener('keypress', function (e) {
+            if (e.key === 'Enter') {
+                const chat = document.getElementById('chat-window');
+                chat.innerHTML += `<p class="mt-2 text-white">You: ${this.value}</p>`;
+                chat.innerHTML += `<p class="mt-2 text-yellow-500">Mbali: "That's a classic issue. Vusi has handled that exact calibration a hundred times—it's essentially a logic board timing sync. He'll have you back to full production speed in record time."</p>`;
+                this.value = '';
+                chat.scrollTop = chat.scrollHeight;
+            }
+        });
+    </script>
 </body>
 </html>
