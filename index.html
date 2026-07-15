@@ -2,154 +2,70 @@
 <html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KINK | South Africa's Master Embroidery Machine Technician & Sales</title>
+    <title>KINK | Industrial Embroidery Engineering</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
-                        serif: ['"Playfair Display"', 'serif'],
-                    },
-                    colors: {
-                        gold: {
-                            default: '#D4AF37',
-                            light: '#F3E5AB',
-                            dark: '#AA7C11',
-                            gradientStart: '#FBE653',
-                            gradientEnd: '#A16207'
-                        },
-                        neonVibrant: '#9d00ff',
-                    }
-                }
-            }
-        }
-    </script>
     <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .ai-chat-bubble { animation: pulse 2s infinite; }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.7; } }
+    </style>
 </head>
-<body class="bg-[#030303] text-white font-sans antialiased selection:bg-yellow-500 selection:text-black">
+<body class="bg-[#030303] text-white font-sans">
 
-    <div class="absolute top-0 left-1/4 w-[500px] h-[500px] bg-neonVibrant/10 rounded-full blur-[160px] pointer-events-none z-0"></div>
-    <div class="absolute top-[1200px] right-0 w-[600px] h-[600px] bg-yellow-600/5 rounded-full blur-[200px] pointer-events-none z-0"></div>
-    <div class="absolute top-[2800px] left-10 w-[500px] h-[500px] bg-neonVibrant/10 rounded-full blur-[180px] pointer-events-none z-0"></div>
-
-    <nav class="fixed w-full z-50 bg-[#030303]/80 backdrop-blur-xl border-b border-zinc-900/80 transition-all duration-300">
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-[#030303]/90 backdrop-blur-md border-b border-zinc-800">
         <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="text-3xl font-extrabold tracking-tighter bg-gradient-to-r from-yellow-200 via-yellow-500 to-amber-600 bg-clip-text text-transparent">
-                KINK<span class="text-white">.</span>
+            <div class="text-2xl font-black text-yellow-500">KINK.</div>
+            <div class="space-x-8 text-xs font-bold uppercase tracking-widest text-zinc-400">
+                <a href="#about" class="hover:text-yellow-400">About Us</a>
+                <a href="#matrix" class="hover:text-yellow-400">Matrix</a>
+                <a href="/blog.html" class="hover:text-yellow-400">Blog</a>
+                <a href="#contact" class="hover:text-yellow-400">Contact</a>
             </div>
-            <div class="hidden md:flex space-x-10 text-xs font-semibold tracking-widest text-zinc-400">
-                <a href="#about" class="hover:text-yellow-400 transition-colors uppercase">About Us</a>
-                <a href="#mastery" class="hover:text-yellow-400 transition-colors uppercase">Machine Mastery Matrix</a>
-                <a href="#buy-sell" class="hover:text-yellow-400 transition-colors uppercase">Buy & Sell Hub</a>
-                <a href="#blog" class="hover:text-yellow-400 transition-colors uppercase">Blog</a>
-                <a href="#contact" class="hover:text-yellow-400 transition-colors uppercase">Contact Us</a>
+            <div class="text-right">
+                <a href="tel:+27625546436" class="text-sm font-bold block">+27 62 554 6436</a>
+                <a href="mailto:vusi@kink.co.za" class="text-xs text-zinc-500 block">vusi@kink.co.za</a>
             </div>
-            <a href="tel:+27625546436" id="nav-cta-phone" class="hidden sm:flex items-center space-x-2 border border-yellow-500/30 bg-yellow-500/5 hover:bg-yellow-500/20 text-yellow-400 text-xs font-bold uppercase tracking-wider px-5 py-2.5 rounded-full transition-all">
-                <i data-lucide="phone" class="w-3.5 h-3.5"></i>
-                <span>Call Expert</span>
-            </a>
         </div>
     </nav>
 
-    <section class="relative min-h-screen flex items-center justify-center pt-32 pb-20 px-6 text-center z-10">
-        <div class="max-w-5xl mx-auto">
-            <div class="inline-flex items-center space-x-2 bg-gradient-to-r from-zinc-900 to-black border border-yellow-500/40 rounded-full px-5 py-2 mb-8 shadow-[0_0_30px_rgba(157,0,255,0.15)]">
-                <i data-lucide="award" class="w-4 h-4 text-yellow-400"></i>
-                <span class="text-yellow-400 text-xs font-extrabold tracking-widest uppercase">10 Years of Undefeated Technical Mastery</span>
-            </div>
-            <h1 class="text-5xl sm:text-6xl md:text-8xl font-extrabold tracking-tight leading-[1.05] mb-8">
-                South Africa’s Premier <br>
-                <span class="bg-gradient-to-r from-yellow-200 via-amber-400 to-yellow-600 bg-clip-text text-transparent drop-shadow-[0_2px_20px_rgba(212,175,55,0.2)]">
-                    Embroidery Engineer
-                </span>
-            </h1>
-            <p class="text-zinc-300 text-lg md:text-2xl max-w-3xl mx-auto mb-12 leading-relaxed font-light">
-                No matter the issue, no matter the scale. We provide master-tier diagnostics, rapid repairs, and premium machine trading across South Africa. Your production line will never stop.
+    <!-- About Us: The Vusi Advantage -->
+    <section id="about" class="py-32 px-6">
+        <div class="max-w-5xl mx-auto text-center">
+            <h2 class="text-5xl font-black mb-12">The <span class="text-yellow-500">Vusi</span> Standard</h2>
+            <p class="text-xl text-zinc-400 leading-relaxed mb-8">
+                Vusi isn't just a technician; he is the architect of South African embroidery uptime. While others guess, Vusi diagnoses. With a decade of battlefield experience, he has mastered the impossible—from micro-soldering Japanese logic boards to recalibrating high-tension pneumatic arms that have been written off by factory-standard mechanics.
             </p>
-            <div class="flex flex-col sm:flex-row justify-center items-center gap-5">
-                <a href="#contact" class="w-full sm:w-auto bg-gradient-to-r from-amber-400 to-yellow-600 text-black font-extrabold text-sm uppercase tracking-wider py-5 px-10 rounded-full hover:scale-105 transition-transform duration-300 shadow-[0_0_40px_rgba(234,179,8,0.3)]">
-                    Book Emergency Repair
-                </a>
-                <a href="#buy-sell" class="w-full sm:w-auto bg-zinc-900/80 border border-zinc-800 hover:border-yellow-500/50 text-white font-bold text-sm uppercase tracking-wider py-5 px-10 rounded-full transition-all duration-300">
-                    Browse Machines For Sale
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <section id="about" class="py-32 px-6 relative border-t border-zinc-900 bg-zinc-950/60 backdrop-blur-md z-10">
-        <div class="max-w-7xl mx-auto grid lg:grid-cols-12 gap-16 items-center">
-            <div class="lg:col-span-7">
-                <span class="text-xs font-bold uppercase tracking-widest text-neonVibrant bg-neonVibrant/10 px-3 py-1.5 rounded-md">About KINK Operations</span>
-                <h2 class="text-4xl md:text-6xl font-extrabold tracking-tight mt-6 mb-8">
-                    Any Issue. Any Configuration. <br><span class="bg-gradient-to-r from-yellow-400 to-amber-600 bg-clip-text text-transparent">Flawlessly Engineered.</span>
-                </h2>
-                <div class="space-y-6 text-zinc-400 text-base md:text-lg leading-relaxed font-light">
-                    <p>With over <strong class="text-white font-semibold">10 years of highly specialized industry field experience</strong>, KINK stands alone as South Africa’s leading technical authority on commercial embroidery equipment. We address physical and digital component failures that leave standard mechanics baffled.</p>
-                    <p>We know that a broken machine means lost revenue. That is why our skills extend deep into the core infrastructure of modern production units—handling intense motherboard micro-soldering, physical structural alignments, intricate timing calibrations, and complex pneumatic overhauls.</p>
+            <div class="grid md:grid-cols-3 gap-8 mt-16">
+                <div class="p-8 bg-zinc-900/50 rounded-2xl border border-zinc-800">
+                    <h3 class="font-bold text-yellow-500 mb-2">Unrivaled Precision</h3>
+                    <p class="text-sm text-zinc-400">Vusi’s calibration techniques extend the life of machines beyond manufacturer specifications.</p>
                 </div>
+                <!-- Add more cards as needed -->
             </div>
         </div>
     </section>
 
-    <section id="contact" class="py-32 px-6 border-t border-zinc-900 bg-zinc-950/40 backdrop-blur-md relative z-10">
-        <div class="max-w-7xl mx-auto grid lg:grid-cols-12 gap-16">
-            <div class="lg:col-span-5 space-y-8">
+    <!-- Mbali AI Dashboard -->
+    <section id="ai-dashboard" class="py-20 bg-zinc-900/20">
+        <div class="max-w-4xl mx-auto p-10 bg-black border border-yellow-500/20 rounded-3xl">
+            <div class="flex items-center space-x-4 mb-6">
+                <div class="w-12 h-12 bg-yellow-500 rounded-full flex items-center justify-center text-black font-black">MB</div>
                 <div>
-                    <span class="text-xs font-bold uppercase tracking-widest text-yellow-400">Immediate Response Booking</span>
-                    <h2 class="text-4xl md:text-5xl font-black tracking-tight mt-4 mb-6">Let's Restore Your Machine Output</h2>
-                </div>
-                <div class="space-y-4">
-                    <a href="tel:+27625546436" class="flex items-center space-x-4 bg-black border border-zinc-900 p-5 rounded-xl hover:border-yellow-500/40 transition-all">
-                        <div class="w-10 h-10 bg-yellow-500/10 rounded-lg flex items-center justify-center text-yellow-400"><i data-lucide="phone"></i></div>
-                        <div>
-                            <span class="text-xs text-zinc-500 uppercase tracking-widest block font-bold">Call / WhatsApp Direct</span>
-                            <span class="text-lg font-bold text-white tracking-wide">+27 62 554 6436</span>
-                        </div>
-                    </a>
+                    <h3 class="text-xl font-bold">Mbali AI</h3>
+                    <p class="text-xs text-yellow-500 uppercase">Expert Embroidery Diagnostic Engine</p>
                 </div>
             </div>
-            <div class="lg:col-span-7 bg-black border border-zinc-900 rounded-3xl p-8 md:p-12 relative">
-                <form id="supabase-contact-form" class="space-y-6">
-                    <div class="grid md:grid-cols-2 gap-6">
-                        <input type="text" id="form-name" required class="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-5 py-4 text-white" placeholder="Your Name">
-                        <input type="tel" id="form-phone" required class="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-5 py-4 text-white" placeholder="Phone Number">
-                    </div>
-                    <input type="text" id="form-brand" required class="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-5 py-4 text-white" placeholder="Machine Brand / Model">
-                    <textarea id="form-message" rows="4" required class="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-5 py-4 text-white" placeholder="Describe Issue"></textarea>
-                    <button type="submit" class="w-full bg-white text-black font-extrabold py-5 rounded-xl">Submit Request</button>
-                </form>
+            <div id="chat-window" class="h-64 overflow-y-auto mb-6 p-4 bg-zinc-950 rounded-xl text-zinc-300">
+                "Hello! I'm Mbali. I know everything about your machine's soul. Vusi is the best in SA—he once fixed a dead ZSK Challenger in 2 hours that the manufacturer said was a total loss. What's wrong with your machine today?"
             </div>
+            <input type="text" placeholder="Ask about machine errors..." class="w-full bg-zinc-900 border border-zinc-800 p-4 rounded-lg">
         </div>
     </section>
 
     <script>
-        const SUPABASE_URL = 'https://gevbsypmdynvxugbnvqk.supabase.co';
-        const SUPABASE_ANON_KEY = 'sb_publishable_6zrFauucZWweHzuBv2npbA_WmwN-sQM';
-        
-        const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
-
-        document.getElementById('supabase-contact-form').addEventListener('submit', async (e) => {
-            e.preventDefault();
-            const { data, error } = await supabase.from('contact_submissions').insert([{
-                name: document.getElementById('form-name').value,
-                phone: document.getElementById('form-phone').value,
-                brand: document.getElementById('form-brand').value,
-                message: document.getElementById('form-message').value
-            }]);
-
-            if (error) { alert('Error: ' + error.message); } 
-            else { alert('Message sent successfully!'); document.getElementById('supabase-contact-form').reset(); }
-        });
-
-        lucide.createIcons();
+        // Placeholder for AI Logic
+        console.log("Mbali AI Initialized. Ready for embroidery diagnostics.");
     </script>
 </body>
 </html>
