@@ -1,15 +1,13 @@
 <!DOCTYPE html>
-<html lang="en" class="bg-black text-yellow-500 font-mono">
-<head>
-    <script src="https://cdn.tailwindcss.com"></script>
-</head>
+<html class="bg-black text-yellow-500 font-mono">
+<head><script src="https://cdn.tailwindcss.com"></script></head>
 <body class="p-5">
-    <h1 class="text-5xl font-black text-white mb-10 text-center uppercase tracking-[0.2em] border-b border-yellow-500 pb-5">1000+ MASTER_PROTOCOLS</h1>
-    <div id="grid" class="grid grid-cols-4 md:grid-cols-8 gap-1 text-[8px] opacity-60"></div>
+    <h1 class="text-4xl text-white font-black mb-5 text-center">MATRIX_DATA_STREAM</h1>
+    <div id="flood" class="grid grid-cols-5 md:grid-cols-10 gap-1 text-[7px] opacity-50"></div>
     <script>
-        const grid = document.getElementById('grid');
+        const flood = document.getElementById('flood');
         for(let i=0; i<1000; i++) {
-            grid.innerHTML += `<div class="border border-yellow-900/30 p-1 hover:bg-yellow-500 hover:text-black cursor-crosshair">ID_${1000+i}:SYNC_OK</div>`;
+            flood.innerHTML += `<div class="hover:bg-yellow-500 hover:text-black">D-${i}-SYNC</div>`;
         }
     </script>
 </body>
