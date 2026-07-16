@@ -1,55 +1,77 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en" class="bg-[#050505]">
 <head>
-    <meta charset="UTF-8">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        @keyframes flow { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
-        .bg-animate { background: linear-gradient(120deg, #000, #1a1a00, #000); background-size: 200% 200%; animation: flow 10s ease infinite; }
-        .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(20px); border: 1px solid rgba(234, 179, 8, 0.2); }
+        .neon-gold { text-shadow: 0 0 15px #eab308; }
+        .grid-bg { background-image: radial-gradient(#eab308 0.5px, transparent 0.5px); background-size: 30px 30px; }
     </style>
 </head>
-<body class="bg-animate text-white min-h-screen">
-    <!-- NAV -->
-    <nav class="glass sticky top-0 z-50 px-10 py-6 flex justify-between items-center">
-        <div class="text-4xl font-black italic tracking-tighter">KiNk<span class="text-yellow-500">.</span></div>
-        <div class="flex gap-12 text-[10px] font-bold tracking-[0.4em] text-zinc-400">
-            <a href="about.html" class="hover:text-yellow-500 transition">ABOUT</a>
-            <a href="matrix.html" class="hover:text-yellow-500 transition">MATRIX</a>
-            <a href="blog.html" class="hover:text-yellow-500 transition">BLOG</a>
+<body class="text-white font-sans grid-bg">
+    
+    <!-- NAVIGATION -->
+    <nav class="flex justify-between items-center p-8 border-b border-yellow-500/30 bg-black/80 backdrop-blur-xl sticky top-0 z-50">
+        <div class="text-4xl font-black italic">KiNk<span class="text-yellow-500">.</span></div>
+        <div class="flex gap-8 text-[10px] font-bold tracking-[0.3em] uppercase">
+            <a href="about.html" class="hover:text-yellow-500">Mastery</a>
+            <a href="matrix.html" class="hover:text-yellow-500">Matrix</a>
+            <a href="contact.html" class="bg-yellow-500 text-black px-6 py-2 rounded-sm hover:bg-white transition">Contact Us</a>
         </div>
     </nav>
 
-    <!-- HERO -->
-    <section class="py-32 text-center">
-        <h1 class="text-9xl font-black italic mb-6">PREMIER<br><span class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-yellow-800">ENGINEERING</span></h1>
-        <a href="contact.html" class="inline-block border border-yellow-500 px-16 py-6 font-black hover:bg-yellow-500 hover:text-black transition">EMERGENCY REPAIR</a>
+    <!-- HERO SECTION -->
+    <header class="py-24 px-10 text-center relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-b from-yellow-500/10 to-transparent"></div>
+        <h1 class="text-[120px] font-black leading-none mb-6 neon-gold">PREMIER<br>ENGINEERING</h1>
+        <p class="max-w-2xl mx-auto text-zinc-400 text-xl font-light mb-10">Industrial-grade embroidery restoration. We don't just fix; we re-engineer the soul of the machine.</p>
+        <div class="flex justify-center gap-6">
+            <a href="contact.html" class="border-2 border-yellow-500 px-12 py-5 font-black text-xl hover:bg-yellow-500 hover:text-black transition">EMERGENCY REPAIR</a>
+        </div>
+    </header>
+
+    <!-- SERVICE GRID (THE "FLOODED WITH DATA" LOOK) -->
+    <section class="max-w-7xl mx-auto p-10 grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="p-8 border border-yellow-500/50 bg-zinc-950 hover:bg-yellow-500/5 transition group">
+            <h3 class="text-2xl font-black mb-4">CLEANING & MAINTENANCE</h3>
+            <p class="text-zinc-400 group-hover:text-black">Precision microscopic dust removal from PCB and needle-race assemblies.</p>
+        </div>
+        <div class="p-8 border border-yellow-500/50 bg-zinc-950 hover:bg-yellow-500/5 transition group">
+            <h3 class="text-2xl font-black mb-4">REPAIR & DIAGNOSTICS</h3>
+            <p class="text-zinc-400 group-hover:text-black">Hard-line fault detection. If it moves, we make it move perfectly.</p>
+        </div>
+        <div class="p-8 border border-yellow-500/50 bg-zinc-950 hover:bg-yellow-500/5 transition group">
+            <h3 class="text-2xl font-black mb-4">TRADE & SCREEN PRINT</h3>
+            <p class="text-zinc-400 group-hover:text-black">Premium hardware sourcing and advanced screen printing integration.</p>
+        </div>
     </section>
 
-    <!-- MBALI ELITE ENGINE -->
-    <section class="max-w-4xl mx-auto p-10 glass rounded-sm">
-        <h3 class="text-yellow-500 font-bold mb-6 tracking-widest text-xs">MBALI_COGNITIVE_INTERFACE_V4</h3>
-        <div id="chat-window" class="h-64 overflow-y-auto mb-6 text-zinc-300 font-mono text-sm leading-relaxed"></div>
-        <input type="text" id="user-input" class="w-full bg-transparent border-b border-zinc-700 p-4 focus:border-yellow-500 outline-none" placeholder="Input diagnostic code or inquiry...">
+    <!-- MBALI AI ENGINE -->
+    <section class="max-w-4xl mx-auto p-10 border border-yellow-500/20 bg-black mb-20 rounded-xl">
+        <h2 class="text-yellow-500 text-xs font-bold uppercase tracking-widest mb-4">MBALI_INTERFACE_V_ALPHA</h2>
+        <div id="chat" class="h-60 overflow-y-auto mb-6 text-zinc-500 font-mono text-sm italic"></div>
+        <input type="text" id="input" class="w-full bg-zinc-900 border border-zinc-700 p-4 text-white focus:outline-yellow-500" placeholder="Ask Mbali anything...">
     </section>
 
     <script>
-        const mbaliLogic = (input) => {
-            const i = input.toLowerCase();
-            const greetings = ["hi", "hello", "hey", "greetings"];
-            if (greetings.some(word => i.includes(word))) return "Mbali Core: A pleasant greeting, but I am currently calibrated for industrial diagnostics. Are you reporting a system error or a mechanical failure?";
-            if (i.includes("tajima")) return "Tajima telemetry accessed. If your TMEZ-SC is stalling, verify the encoder belt tension. Is the spindle torque fluctuating?";
-            if (i.includes("ricoma")) return "Ricoma protocols live. Tension drops usually stem from hook-race debris. Have you cleared the needle plate sensors?";
-            return "Mbali Core: My archives contain 5,000+ repair protocols. Please specify your machine make and the observed anomaly so I can provide a precise solution.";
-        };
-
-        document.getElementById('user-input').addEventListener('keypress', function(e) {
+        const chat = document.getElementById('chat');
+        const input = document.getElementById('input');
+        
+        input.addEventListener('keypress', (e) => {
             if (e.key === 'Enter') {
-                const chat = document.getElementById('chat-window');
-                const val = this.value;
-                chat.innerHTML += `<p class="text-white"><strong>User:</strong> ${val}</p>`;
-                chat.innerHTML += `<p class="text-yellow-500 mb-4 italic"><strong>Mbali:</strong> ${mbaliLogic(val)}</p>`;
-                this.value = '';
+                const q = input.value.toLowerCase();
+                chat.innerHTML += `<p class="text-white">You: ${input.value}</p>`;
+                
+                let response = "";
+                if (['hi', 'hello', 'hey'].includes(q)) {
+                    response = "Mbali: That is a basic human greeting. I am here to optimize your embroidery production lines—do you have a technical failure, or are you just wasting my bandwidth?";
+                } else if (q.includes('price') || q.includes('cost')) {
+                    response = "Mbali: Quality has no 'price' in a breakdown. Provide the machine model, or I cannot calculate the value of your uptime.";
+                } else {
+                    response = "Mbali: Processing diagnostic... Error: No model ID found. Input your machine serial for a deep-dive analysis.";
+                }
+                
+                chat.innerHTML += `<p class="text-yellow-500 mb-6">${response}</p>`;
+                input.value = '';
                 chat.scrollTop = chat.scrollHeight;
             }
         });
