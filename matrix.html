@@ -1,17 +1,14 @@
-<!DOCTYPE html>
-<html lang="en" class="bg-black text-white">
-<head><script src="https://cdn.tailwindcss.com"></script></head>
-<body class="p-10">
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-2" id="grid"></div>
+<body class="bg-black text-white p-10">
+    <h1 class="text-4xl font-black mb-10 text-center">TECHNICAL_DATA_MATRIX</h1>
+    <div class="grid grid-cols-3 gap-4" id="matrix"></div>
     <script>
-        const grid = document.getElementById('grid');
-        for(let i=0; i<60; i++) {
-            grid.innerHTML += `
-            <div class="h-32 border border-zinc-900 hover:border-yellow-500 p-4 transition-all group">
-                <span class="text-[8px] text-yellow-500 uppercase">Protocol ${1000+i}</span>
-                <p class="text-xs mt-2 font-bold opacity-70 group-hover:opacity-100">Synchronizing ${['Tajima', 'Ricoma'][i%2]} drive parameters for peak torque.</p>
+        const m = document.getElementById('matrix');
+        for(let i=0; i<30; i++) {
+            m.innerHTML += `<div class="p-6 border border-zinc-800 hover:border-yellow-500 transition">
+                <p class="text-yellow-500 text-[10px]">PROTOCOL_00${i}</p>
+                <h3 class="font-bold">Sync: ${['Tajima', 'Ricoma'][i%2]}</h3>
+                <p class="text-xs text-zinc-500 mt-2">Torque: 99.8% | Head Status: Stable | Vibration: Null</p>
             </div>`;
         }
     </script>
 </body>
-</html>
