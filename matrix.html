@@ -1,30 +1,17 @@
-<div class="grid grid-cols-1 md:grid-cols-2 gap-4" id="matrix-container"></div>
-
-<script>
-    const technicalData = [
-        "Tajima TMEZ-SC: Rotary hook timing set to 0.15mm for optimal stitch consistency.",
-        "Ricoma MT-1501: Chassis vibration dampening verified via X-axis torque calibration.",
-        "Tajima TMAR-V: Pneumatic arm pressure stabilized at 0.5MPa for heavy leather.",
-        "Ricoma WCH: Ultra-wide roll fabric tension synchronized across 20 heads.",
-        "Tajima TMEZ-KC: AI thread management sensor sensitivity boosted by 15%.",
-        "Ricoma EM-1010: Mainboard communication loop back-traced and repaired.",
-        "Tajima TFMX-C: Needle bar depth calibrated to industry standard 1.2mm.",
-        "Ricoma CHT2: Multi-head bridge alignment verified using laser precision.",
-        "Tajima TMX-TL: Extra-large field frame synchronization adjusted for zero-drag.",
-        "Ricoma RCM-E: Thread tensioner spring elasticity checked and replaced."
-    ];
-
-    const container = document.getElementById('matrix-container');
-    let output = "";
-    // Generates 60 unique technical entries
-    for (let i = 0; i < 60; i++) {
-        let entry = technicalData[i % technicalData.length];
-        output += `
-            <div class="p-6 bg-zinc-900 border border-zinc-800 rounded-lg hover:border-yellow-500 transition">
-                <span class="text-yellow-500 font-bold text-xs uppercase">Protocol #${1000 + i}</span>
-                <p class="text-zinc-300 mt-2">${entry} (Ref: Vusi-Mastery-ID-${i*7})</p>
-            </div>
-        `;
-    }
-    container.innerHTML = output;
-</script>
+<!DOCTYPE html>
+<html lang="en" class="bg-black text-white">
+<head><script src="https://cdn.tailwindcss.com"></script></head>
+<body class="p-10">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-2" id="grid"></div>
+    <script>
+        const grid = document.getElementById('grid');
+        for(let i=0; i<60; i++) {
+            grid.innerHTML += `
+            <div class="h-32 border border-zinc-900 hover:border-yellow-500 p-4 transition-all group">
+                <span class="text-[8px] text-yellow-500 uppercase">Protocol ${1000+i}</span>
+                <p class="text-xs mt-2 font-bold opacity-70 group-hover:opacity-100">Synchronizing ${['Tajima', 'Ricoma'][i%2]} drive parameters for peak torque.</p>
+            </div>`;
+        }
+    </script>
+</body>
+</html>
