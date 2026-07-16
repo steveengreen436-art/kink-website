@@ -1,19 +1,19 @@
 <!DOCTYPE html>
-<html lang="en" class="bg-[#030303] text-white">
+<html lang="en" class="bg-black text-white">
 <head><script src="https://cdn.tailwindcss.com"></script></head>
-<body class="p-10">
-    <a href="index.html" class="text-yellow-500 font-bold underline mb-10 block">← HOME</a>
-    <div id="grid" class="grid grid-cols-1 md:grid-cols-3 gap-6"></div>
+<body class="py-20 px-20">
+    <h1 class="text-7xl font-black mb-20">A DECADE OF<br><span class="text-yellow-500">UNDEFETATED MASTERY</span></h1>
+    <div class="border-l border-zinc-800 space-y-16 pl-10" id="bio"></div>
     <script>
-        const data = ["Tajima TMEZ-SC: AI Thread Management recalibration.", "Ricoma MT-1501: Chassis balancing.", "U-Tajima yenza umsebenzi ococekileyo."];
-        let html = "";
-        for(let i=0; i<60; i++) {
-            html += `<div class="p-6 border border-yellow-500/20 bg-zinc-900 rounded-2xl hover:border-yellow-500 transition shadow-[0_0_15px_rgba(234,179,8,0.1)]">
-                <h3 class="text-yellow-500 font-bold">PROTOCOL #${1000+i}</h3>
-                <p class="text-sm mt-2 text-zinc-300">${data[i%3]}</p>
+        const bio = document.getElementById('bio');
+        for(let i=0; i<15; i++) {
+            bio.innerHTML += `
+            <div class="hover:pl-10 transition-all cursor-pointer">
+                <div class="text-[10px] text-yellow-500">LOG_ENTRY_${2016+i}</div>
+                <h3 class="text-xl font-bold">Industrial Standard Calibration</h3>
+                <p class="text-zinc-500 italic">"The philosophy is simple: Timing is everything."</p>
             </div>`;
         }
-        document.getElementById('grid').innerHTML = html;
     </script>
 </body>
 </html>
