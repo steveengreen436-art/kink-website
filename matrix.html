@@ -2,12 +2,12 @@
 <html class="bg-black text-yellow-500 font-mono">
 <head><script src="https://cdn.tailwindcss.com"></script></head>
 <body class="p-5">
-    <h1 class="text-4xl text-white font-black mb-5 text-center">MATRIX_DATA_STREAM</h1>
-    <div id="flood" class="grid grid-cols-5 md:grid-cols-10 gap-1 text-[7px] opacity-50"></div>
+    <h1 class="text-4xl text-white font-black mb-5">TECHNICAL_DATA_MATRIX</h1>
+    <div id="data-flood" class="grid grid-cols-2 md:grid-cols-5 gap-2 text-[9px]"></div>
     <script>
-        const flood = document.getElementById('flood');
+        const flood = document.getElementById('data-flood');
         for(let i=0; i<1000; i++) {
-            flood.innerHTML += `<div class="hover:bg-yellow-500 hover:text-black">D-${i}-SYNC</div>`;
+            flood.innerHTML += `<div class="border border-yellow-900/30 p-1">PROTO_${1000+i} | STATUS:0.998 | SYNC:ACTIVE</div>`;
         }
     </script>
 </body>
