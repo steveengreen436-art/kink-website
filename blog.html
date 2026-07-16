@@ -1,19 +1,13 @@
-<!DOCTYPE html>
-<html lang="en" class="bg-[#030303] text-white">
-<head><script src="https://cdn.tailwindcss.com"></script></head>
-<body class="p-10">
-    <a href="index.html" class="text-yellow-500 font-bold underline mb-10 block">← HOME</a>
-    <div id="grid" class="grid grid-cols-1 md:grid-cols-3 gap-6"></div>
-    <script>
-        const data = ["Tajima TMEZ-SC: AI Thread Management recalibration.", "Ricoma MT-1501: Chassis balancing.", "U-Tajima yenza umsebenzi ococekileyo."];
-        let html = "";
-        for(let i=0; i<60; i++) {
-            html += `<div class="p-6 border border-yellow-500/20 bg-zinc-900 rounded-2xl hover:border-yellow-500 transition shadow-[0_0_15px_rgba(234,179,8,0.1)]">
-                <h3 class="text-yellow-500 font-bold">PROTOCOL #${1000+i}</h3>
-                <p class="text-sm mt-2 text-zinc-300">${data[i%3]}</p>
-            </div>`;
-        }
-        document.getElementById('grid').innerHTML = html;
-    </script>
+<body class="bg-black text-white p-20">
+    <h1 class="text-5xl font-black mb-10">ENGINEERING_LOGS</h1>
+    <div class="space-y-10 max-w-4xl">
+        <div class="bg-zinc-900 p-8 border-l-4 border-yellow-500">
+            <h2 class="text-2xl font-bold">The Immortality of Timing</h2>
+            <p class="text-zinc-400 mt-4">Why replacing parts is a failure. Perfect timing creates a machine that never dies.</p>
+        </div>
+        <div class="bg-zinc-900 p-8 border-l-4 border-yellow-500">
+            <h2 class="text-2xl font-bold">Pressure Calibration</h2>
+            <p class="text-zinc-400 mt-4">Calibrating pneumatic arms to 0.5MPa for heavy leather processing.</p>
+        </div>
+    </div>
 </body>
-</html>
