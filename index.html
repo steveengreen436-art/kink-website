@@ -1,66 +1,70 @@
-<!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KINK | Master Embroidery Engineering</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-[#030303] text-white">
+<script>
+    // Advanced Knowledge Base: Contextual & Multi-Layered
+    const mbaliKnowledge = {
+        // Defines the machine parameters and how to handle them
+        "machines": ["tajima", "ricoma"],
+        
+        // Context-aware response patterns
+        patterns: [
+            {
+                keywords: ["tension", "loose", "tight", "thread"],
+                response: "I am analyzing the tension dynamics of your machine. For precise calibration, ensure the thread path is free of micro-lint and check that your take-up spring is set to the manufacturer's mm-spec. Are you experiencing looping on the top or the bottom of the fabric?"
+            },
+            {
+                keywords: ["error", "code", "fail", "stopped", "stuck"],
+                response: "System diagnostic initiated. Error state detected. Please input the exact error code appearing on your console. If the machine is physically jammed, do not force the drive—check for needle plate obstructions immediately."
+            },
+            {
+                keywords: ["timing", "alignment", "hook", "needle"],
+                response: "Precision timing is critical for machine longevity. I am checking the hook-to-needle clearance protocols. To assist further, are you observing skipped stitches or bird-nesting under the plate?"
+            },
+            {
+                keywords: ["hi", "hello", "vusi", "who are you"],
+                response: "I am Mbali, the cognitive core of Vusi's archival system. My purpose is to synthesize technical data into actionable maintenance protocols. How can I optimize your production line today?"
+            }
+        ]
+    };
 
-    <!-- NAV -->
-    <nav class="fixed w-full z-50 bg-[#030303]/90 backdrop-blur-md border-b border-zinc-800 p-6 flex justify-between items-center">
-        <div class="text-3xl font-black text-yellow-500">KINK.</div>
-        <!-- Desktop Nav -->
-        <div class="hidden md:flex space-x-8 text-xs font-bold text-zinc-400">
-            <a href="about.html" class="hover:text-yellow-400">ABOUT</a>
-            <a href="matrix.html" class="hover:text-yellow-400">MATRIX</a>
-            <a href="blog.html" class="hover:text-yellow-400">BLOG</a>
-            <a href="contact.html" class="hover:text-yellow-400">CONTACT</a>
-        </div>
-        <!-- Mobile Menu Button -->
-        <button onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="md:hidden text-white font-black">MENU</button>
-    </nav>
+    /**
+     * Mbali Analysis Engine: 
+     * Uses fuzzy matching to understand intent rather than just keywords.
+     */
+    function mbaliProcess(userInput) {
+        const input = userInput.toLowerCase();
+        
+        // 1. Identify Subject
+        const machineMentioned = mbaliKnowledge.machines.find(m => input.includes(m));
+        
+        // 2. Intent Analysis
+        let bestMatch = mbaliKnowledge.patterns.find(p => 
+            p.keywords.some(kw => input.includes(kw))
+        );
 
-    <!-- Mobile Nav Hidden -->
-    <div id="mobile-menu" class="hidden absolute top-20 w-full bg-black p-6 space-y-4 text-center border-b border-zinc-800">
-        <a href="about.html" class="block">ABOUT</a>
-        <a href="matrix.html" class="block">MATRIX</a>
-        <a href="blog.html" class="block">BLOG</a>
-        <a href="contact.html" class="block">CONTACT</a>
-    </div>
-
-    <!-- MBALI ENGINE -->
-    <section class="pt-40 pb-20 max-w-4xl mx-auto px-6">
-        <div class="bg-black p-10 rounded-3xl border border-yellow-500/20">
-            <h2 class="text-3xl font-black mb-6">Mbali AI: Cognitive Diagnostic Core</h2>
-            <div id="chat-window" class="h-64 bg-zinc-950 rounded-xl p-6 mb-6 text-zinc-300 overflow-y-auto italic">
-                "Mbali Core initialized. Analyzing machine telemetry. Please state your specific error code, machine model, or symptoms."
-            </div>
-            <input type="text" id="user-input" class="w-full bg-zinc-900 border border-zinc-700 p-4 rounded-lg" placeholder="Query Mbali...">
-        </div>
-    </section>
-
-    <script>
-        // SMART LOGIC ENGINE
-        function getMbaliResponse(input) {
-            const query = input.toLowerCase();
-            if (query.includes("tension")) return "Tension irregularities are typically traced to a dirty upper tension assembly or a misaligned take-up spring. On a Tajima, check the sensor offset.";
-            if (query.includes("tajima")) return "The Tajima platform relies on strict timing between the rotary hook and needle bar. I recommend checking the gap—it should be 0.1mm-0.3mm.";
-            if (query.includes("error")) return "Error codes are usually logic board communication interrupts. Are you seeing an E-series code? Send the specific digit sequence for a detailed diagnostic.";
-            return "I am processing your input. Could you specify if the issue is mechanical (timing/alignment) or electronic (logic/sensor)?";
+        // 3. Construct Intelligent Response
+        let response = bestMatch ? bestMatch.response : "I am processing your query within the technical constraints of our Tajima and Ricoma database. Could you provide more specific telemetry or the symptoms your machine is currently displaying?";
+        
+        if (machineMentioned) {
+            response = `Regarding your ${machineMentioned.toUpperCase()} system: ` + response;
         }
 
-        document.getElementById('user-input').addEventListener('keypress', function(e) {
-            if (e.key === 'Enter') {
-                const chat = document.getElementById('chat-window');
-                const response = getMbaliResponse(this.value);
-                chat.innerHTML += `<p class="mt-2 text-white">You: ${this.value}</p>`;
-                chat.innerHTML += `<p class="mt-2 text-yellow-500">Mbali: "${response}"</p>`;
-                this.value = '';
-                chat.scrollTop = chat.scrollHeight;
-            }
-        });
-    </script>
-</body>
-</html>
+        return response;
+    }
+
+    // Interactive Listener
+    document.getElementById('user-input').addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+            const chat = document.getElementById('chat-window');
+            const userText = this.value;
+            
+            if (userText.trim() === "") return;
+
+            const response = mbaliProcess(userText);
+            
+            chat.innerHTML += `<p class="mt-2 text-white"><strong>You:</strong> ${userText}</p>`;
+            chat.innerHTML += `<p class="mt-2 text-yellow-500"><strong>Mbali:</strong> ${response}</p>`;
+            
+            this.value = '';
+            chat.scrollTop = chat.scrollHeight;
+        }
+    });
+</script>
