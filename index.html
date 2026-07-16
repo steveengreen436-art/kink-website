@@ -2,18 +2,18 @@
 <html lang="en" class="bg-[#030303] text-white">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-[#030303]">
-    <!-- NAV -->
+<body>
     <nav class="sticky top-0 z-50 bg-black/90 backdrop-blur-md border-b border-yellow-500/30 px-6 py-4 flex justify-between items-center">
-        <img src="https://i.imgur.com/KINK_LOGO.png" alt="KiNk" class="h-12">
-        <div id="desktop-menu" class="hidden md:flex gap-8 text-yellow-500 font-bold tracking-widest text-xs">
-            <a href="index.html" class="hover:text-white">HOME</a>
-            <a href="about.html" class="hover:text-white">ABOUT</a>
-            <a href="matrix.html" class="hover:text-white">MATRIX</a>
-            <a href="blog.html" class="hover:text-white">BLOG</a>
-            <a href="contact.html" class="hover:text-white">CONTACT</a>
+        <a href="index.html"><img src="logo.png" alt="KiNk" class="h-16 w-auto"></a>
+        <div class="hidden md:flex gap-8 text-yellow-500 font-bold tracking-widest text-xs">
+            <a href="index.html" class="hover:text-white transition">HOME</a>
+            <a href="about.html" class="hover:text-white transition">ABOUT</a>
+            <a href="matrix.html" class="hover:text-white transition">MATRIX</a>
+            <a href="blog.html" class="hover:text-white transition">BLOG</a>
+            <a href="contact.html" class="hover:text-white transition">CONTACT</a>
         </div>
         <button onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="md:hidden text-yellow-500 font-black">MENU</button>
     </nav>
@@ -25,17 +25,15 @@
         <a href="contact.html" class="block">CONTACT</a>
     </div>
 
-    <!-- HERO -->
     <section class="py-20 text-center px-6">
         <h1 class="text-5xl font-black text-white mb-6">South Africa’s Premier Embroidery Engineer</h1>
         <a href="contact.html" class="inline-block bg-gradient-to-r from-yellow-500 to-orange-500 text-black font-black px-10 py-4 rounded-full hover:scale-105 transition">BOOK EMERGENCY REPAIR</a>
     </section>
 
-    <!-- MBALI ENGINE -->
     <section class="max-w-2xl mx-auto p-6">
-        <div class="bg-zinc-900/50 p-8 rounded-3xl border border-yellow-500/20">
+        <div class="bg-zinc-900/50 p-8 rounded-3xl border border-yellow-500/20 shadow-2xl">
             <h2 class="text-xl font-bold text-yellow-500 mb-4">Mbali AI: Diagnostic Core</h2>
-            <div id="chat-window" class="h-48 overflow-y-auto mb-4 text-sm text-zinc-300 italic">"Mbali online. Vusi's core is ready. Which machine are we calibrating today?"</div>
+            <div id="chat-window" class="h-48 overflow-y-auto mb-4 text-sm text-zinc-300 italic">"Hello, I am Mbali. Analyzing your machine state—what seems to be the issue?"</div>
             <input type="text" id="user-input" class="w-full bg-black border border-zinc-700 p-4 rounded-lg focus:border-yellow-500 outline-none" placeholder="State machine and issue...">
         </div>
     </section>
@@ -53,8 +51,9 @@
                 const chat = document.getElementById('chat-window');
                 const val = this.value.toLowerCase();
                 let resp = val.includes('tajima') ? mbali.responses.tajima : (val.includes('ricoma') ? mbali.responses.ricoma : mbali.responses.default);
-                chat.innerHTML += `<p class="mt-2 text-white">You: ${this.value}</p><p class="text-yellow-500">Mbali: ${resp}</p>`;
+                chat.innerHTML += `<p class="mt-2 text-white">You: ${this.value}</p><p class="text-yellow-500 mt-1">Mbali: ${resp}</p>`;
                 this.value = '';
+                chat.scrollTop = chat.scrollHeight;
             }
         });
     </script>
