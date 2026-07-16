@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html class="bg-black text-white font-mono">
+<head><script src="https://cdn.tailwindcss.com"></script></head>
+<body class="p-5">
+    <h1 class="text-4xl font-black text-yellow-500 mb-8 border-b border-yellow-500">1000+ LOG_STREAM</h1>
+    <div id="flood" class="grid grid-cols-4 md:grid-cols-6 lg:grid-cols-10 gap-1 text-[8px] opacity-40"></div>
+    <script>
+        const flood = document.getElementById('flood');
+        for(let i=0; i<1000; i++) {
+            flood.innerHTML += `<div class="hover:bg-yellow-500 hover:text-black cursor-pointer">ID:${1000+i}-SYNC_OK</div>`;
+        }
+    </script>
+</body>
+</html>
