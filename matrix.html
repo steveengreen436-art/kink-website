@@ -1,13 +1,12 @@
 <body class="bg-black text-white p-10">
-    <h1 class="text-4xl font-black mb-10 text-center">TECHNICAL_DATA_MATRIX</h1>
-    <div class="grid grid-cols-3 gap-4" id="matrix"></div>
+    <h1 class="text-5xl font-black mb-10 text-center uppercase tracking-widest text-yellow-500">TECHNICAL MATRIX</h1>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4" id="data-flood"></div>
     <script>
-        const m = document.getElementById('matrix');
-        for(let i=0; i<30; i++) {
-            m.innerHTML += `<div class="p-6 border border-zinc-800 hover:border-yellow-500 transition">
-                <p class="text-yellow-500 text-[10px]">PROTOCOL_00${i}</p>
-                <h3 class="font-bold">Sync: ${['Tajima', 'Ricoma'][i%2]}</h3>
-                <p class="text-xs text-zinc-500 mt-2">Torque: 99.8% | Head Status: Stable | Vibration: Null</p>
+        const flood = document.getElementById('data-flood');
+        for(let i=1000; i<1100; i++) {
+            flood.innerHTML += `<div class="p-4 border border-zinc-900 hover:border-yellow-500 transition cursor-pointer bg-zinc-950">
+                <span class="text-[8px] text-yellow-500 font-bold">PROTO_${i}</span>
+                <p class="text-[10px] text-zinc-400 mt-1">Sync: Tajima/Ricoma | Torque: 99.8% | Status: STABLE</p>
             </div>`;
         }
     </script>
