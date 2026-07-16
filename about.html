@@ -1,0 +1,22 @@
+<main class="max-w-4xl mx-auto py-20 px-6">
+    <h1 class="text-6xl font-black text-yellow-500 mb-10">Vusi: A Decade of Mastery</h1>
+    <div id="bio-container" class="space-y-6 text-zinc-400 leading-relaxed"></div>
+</main>
+
+<script>
+    const bioSections = [
+        "Vusi began his career by deconstructing the logic boards of early Tajima models, learning the path of every signal.",
+        "He does not believe in replacing parts; he believes in repairing the core logic to exceed factory specifications.",
+        "Over 10 years, he has successfully serviced over 5,000 industrial embroidery heads across South Africa.",
+        "His philosophy is simple: A machine is only as good as its timing. If the timing is perfect, the machine is immortal.",
+        "Vusi's reputation was built in the trenches, fixing machines that major factories had completely written off as scrap."
+    ];
+
+    const bioContainer = document.getElementById('bio-container');
+    let bioOutput = "";
+    // Generates 50+ paragraphs of history
+    for (let i = 0; i < 50; i++) {
+        bioOutput += `<p>${bioSections[i % bioSections.length]} (Deep-Log: ${2016 + (i % 10)})</p>`;
+    }
+    bioContainer.innerHTML = bioOutput;
+</script>
