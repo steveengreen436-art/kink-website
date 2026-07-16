@@ -1,19 +1,17 @@
-<!DOCTYPE html>
-<html lang="en" class="bg-black text-white">
-<head><script src="https://cdn.tailwindcss.com"></script></head>
-<body class="py-20 px-20">
-    <h1 class="text-7xl font-black mb-20">A DECADE OF<br><span class="text-yellow-500">UNDEFETATED MASTERY</span></h1>
-    <div class="border-l border-zinc-800 space-y-16 pl-10" id="bio"></div>
-    <script>
-        const bio = document.getElementById('bio');
-        for(let i=0; i<15; i++) {
-            bio.innerHTML += `
-            <div class="hover:pl-10 transition-all cursor-pointer">
-                <div class="text-[10px] text-yellow-500">LOG_ENTRY_${2016+i}</div>
-                <h3 class="text-xl font-bold">Industrial Standard Calibration</h3>
-                <p class="text-zinc-500 italic">"The philosophy is simple: Timing is everything."</p>
-            </div>`;
-        }
-    </script>
+<body class="bg-black text-white p-20">
+    <h1 class="text-6xl font-black mb-20 text-yellow-500">VUSI: THE DECADE LOG</h1>
+    <div class="border-l-2 border-yellow-500 ml-4 space-y-12">
+        <div class="pl-10 relative"><div class="absolute -left-2 top-0 w-4 h-4 bg-yellow-500"></div>
+            <h2 class="text-2xl font-bold">2016: ORIGIN</h2>
+            <p class="text-zinc-400">Deconstructing logic boards of Tajima models. The foundational era.</p>
+        </div>
+        <div class="pl-10 relative"><div class="absolute -left-2 top-0 w-4 h-4 bg-yellow-500"></div>
+            <h2 class="text-2xl font-bold">2020: TRENCH WARFARE</h2>
+            <p class="text-zinc-400">Restoring factory scrap to outperform new-spec machines.</p>
+        </div>
+        <div class="pl-10 relative"><div class="absolute -left-2 top-0 w-4 h-4 bg-yellow-500"></div>
+            <h2 class="text-2xl font-bold">2026: GLOBAL MASTERY</h2>
+            <p class="text-zinc-400">Total control over industrial embroidery synchronization.</p>
+        </div>
+    </div>
 </body>
-</html>
