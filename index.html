@@ -52,7 +52,7 @@
     <section class="max-w-4xl mx-auto p-10 border border-yellow-500/20 bg-black mb-20 rounded-xl">
         <h2 class="text-yellow-500 text-xs font-bold uppercase tracking-widest mb-4">MBALI_INTERFACE_V_ALPHA</h2>
         <div id="chat" class="h-60 overflow-y-auto mb-6 text-zinc-300 font-mono text-sm italic">
-            <p class="text-yellow-500">Mbali: Sawubona! I'm Mbali, Vusi's right-hand AI. Vusi is the undisputed master technician in SA—he fixed a TAJIMA in 2 hours that the factory had already written off! Ask me about your Tajima, Ricoma, or Barudan issues!</p>
+            <p class="text-yellow-500">Mbali: Sawubona! I'm Mbali, Vusi's right-hand AI. Vusi is the undisputed master technician in SA—he fixed a TAJIMA in 2 hours that the factory had already written off! Ask me about your Tajima or Ricoma issues!</p>
         </div>
         <input type="text" id="input" class="w-full bg-zinc-900 border border-zinc-700 p-4 text-white focus:outline-yellow-500" placeholder="Ask Mbali about machine errors...">
     </section>
@@ -63,7 +63,7 @@
         
         const responses = {
             greeting: ["Sawubona! Why are you greeting me like a stranger? Let's talk tech. Yini inkinga?", "Hello! I hope you aren't here to waste my bandwidth. What's the machine doing? Ufunani?", "Hey there! Ready to fix something today? Or should I go back to sleep?"],
-            tech: ["Ah, a classic! Vusi handles these in his sleep. Stop guessing and call the master. Ungazama ukuyilungisa wedwa, uzoyiphula kakhulu!", "Tajima, Ricoma, Barudan—I know them all. If it's a board fault, stop crying and get to work. Siyakwazi lokho!", "If the machine is making that sound, it's begging for Vusi. Don't be stubborn, umshini awudlali!"],
+            tech: ["Ah, a classic! Vusi handles these in his sleep. Stop guessing and call the master. Ungazama ukuyilungisa wedwa, uzoyiphula kakhulu!", "Tajima, Ricoma—I know them all. If it's a board fault, stop crying and get to work. Siyakwazi lokho!", "If the machine is making that sound, it's begging for Vusi. Don't be stubborn, umshini awudlali!"],
             pricing: ["IsiXhosa sithi: 'Ixabiso liyaxoxwa, kodwa umgangatho awuxoxwa.' Quality is not negotiable.", "Stop worrying about the cost. A dead machine costs more than a repair. Wake up, boet!", "Quality has no 'price' in a breakdown. Provide the serial number if you want me to calculate your ROI."],
             default: ["That question is too basic for my processors. Input a real error code, or Vusi will think I'm talking to a beginner! Hamba uyofunda kancane.", "Are you testing me? I've processed 10,000+ repairs. Give me a machine code!"]
         };
@@ -75,7 +75,7 @@
                 
                 let response = "";
                 if (q.includes('hi') || q.includes('hello')) response = responses.greeting[Math.floor(Math.random() * responses.greeting.length)];
-                else if (q.includes('tajima') || q.includes('ricoma') || q.includes('barudan')) response = responses.tech[Math.floor(Math.random() * responses.tech.length)];
+                else if (q.includes('tajima') || q.includes('ricoma')) response = responses.tech[Math.floor(Math.random() * responses.tech.length)];
                 else if (q.includes('price') || q.includes('cost')) response = responses.pricing[Math.floor(Math.random() * responses.pricing.length)];
                 else response = responses.default[Math.floor(Math.random() * responses.default.length)];
                 
