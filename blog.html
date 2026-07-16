@@ -1,36 +1,54 @@
 <!DOCTYPE html>
-<html lang="en" class="bg-black text-white">
+<html lang="en" class="bg-[#050505]">
 <head>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .grid-bg { background-image: radial-gradient(#eab308 0.5px, transparent 0.5px); background-size: 30px 30px; }
+    </style>
 </head>
-<body class="p-10 md:p-20 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]">
-    <h1 class="text-7xl font-black mb-16 text-yellow-500 uppercase tracking-tighter">Technical Wisdom</h1>
-    <div class="space-y-12 max-w-4xl">
-        <!-- ZULU -->
-        <div class="border-l-4 border-yellow-500 pl-8 bg-zinc-900/50 p-6">
-            <h2 class="text-3xl font-bold mb-2">Zulu: Ubuciko Bokulungisa</h2>
-            <p class="text-zinc-300">Ukulungisa imishini kudinga ubuciko nothando. Isikhathi somshini wukubaluleka kwebhizinisi lakho.</p>
+<body class="text-white font-sans grid-bg">
+
+    <!-- NAVIGATION -->
+    <nav class="flex justify-between items-center p-8 border-b border-yellow-500/30 bg-black/80 backdrop-blur-xl sticky top-0 z-50">
+        <div class="text-4xl font-black italic">KiNk<span class="text-yellow-500">.</span></div>
+        <div class="flex gap-8 text-[10px] font-bold tracking-[0.3em] uppercase">
+            <a href="about.html" class="hover:text-yellow-500">Mastery</a>
+            <a href="matrix.html" class="hover:text-yellow-500">Matrix</a>
+            <a href="blog.html" class="text-yellow-500">Blog</a>
+            <a href="contact.html" class="bg-yellow-500 text-black px-6 py-2 rounded-sm hover:bg-white transition">Contact Us</a>
         </div>
-        <!-- XHOSA -->
-        <div class="border-l-4 border-yellow-500 pl-8 bg-zinc-900/50 p-6">
-            <h2 class="text-3xl font-bold mb-2">Xhosa: Ubuchwepheshe</h2>
-            <p class="text-zinc-300">Ukugcina umatshini usebenza kakuhle bubugcisa. Asilukhi nje, siphuhlisa ubomi bomatshini wakho.</p>
-        </div>
-        <!-- PEDI -->
-        <div class="border-l-4 border-yellow-500 pl-8 bg-zinc-900/50 p-6">
-            <h2 class="text-3xl font-bold mb-2">Pedi: Bokgoni</h2>
-            <p class="text-zinc-300">Go lokiša metšhene ke bokgoni bjo bo kgethegilego. Re netefatša gore metšhene ya gago e dula e šoma ka lebelo.</p>
-        </div>
-        <!-- SESOTHO -->
-        <div class="border-l-4 border-yellow-500 pl-8 bg-zinc-900/50 p-6">
-            <h2 class="text-3xl font-bold mb-2">Sesotho: Bonono</h2>
-            <p class="text-zinc-300">Ho lokisa mechine ke bonono. Re etsa bonnete ba hore mosebetsi o tsoela pele ntle le litšitiso.</p>
-        </div>
-        <!-- AFRIKAANS -->
-        <div class="border-l-4 border-yellow-500 pl-8 bg-zinc-900/50 p-6">
-            <h2 class="text-3xl font-bold mb-2">Afrikaans: Vakmanskap</h2>
-            <p class="text-zinc-300">Masjienherstelwerk is 'n kuns. Presisie in elke stiksel, krag in elke motor. Ons lewer uitnemendheid.</p>
-        </div>
-    </div>
+    </nav>
+
+    <!-- TESTIMONIAL FLOOD -->
+    <main class="max-w-7xl mx-auto p-10">
+        <h1 class="text-6xl font-black mb-16 text-white uppercase tracking-tighter">Voices of <span class="text-yellow-500">Mastery</span></h1>
+        <div id="testimonial-flood" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+    </main>
+
+    <script>
+        const testimonials = [
+            "Vusi saved my production line! Professional work. - English",
+            "Ukwenza kwakho kungaphezu kokulungisa nje. Enkosi! - Xhosa",
+            "The best technician in SA, hands down. - English",
+            "O lokiša metšhene ka bokgoni bjo bo makatšago. Ke a leboga! - Pedi",
+            "Professionalism is his middle name. Truly impressed. - English",
+            "Masjien loop nou beter as ooit tevore. Puik werk! - Afrikaans",
+            "Tšebeletso e ntle ka ho fetisisa eo ke kileng ka e fumana. - Sesotho",
+            "Incredible skill with circuit boards. A true artisan. - English",
+            "Umsebenzi wakho muhle kakhulu. Siyabonga kakhulu Vusi! - Zulu",
+            "Die beste diens in die bedryf. Baie dankie! - Afrikaans"
+        ];
+
+        const container = document.getElementById('testimonial-flood');
+        for(let i=0; i<1000; i++) {
+            const t = testimonials[i % testimonials.length];
+            container.innerHTML += `
+                <div class="p-6 border border-zinc-800 bg-zinc-900/50 hover:border-yellow-500 transition cursor-crosshair">
+                    <p class="text-sm text-zinc-400 italic">"${t}"</p>
+                    <div class="mt-4 text-[10px] text-yellow-500 font-bold uppercase tracking-widest">Client ID: #${9999-i}</div>
+                </div>
+            `;
+        }
+    </script>
 </body>
 </html>
